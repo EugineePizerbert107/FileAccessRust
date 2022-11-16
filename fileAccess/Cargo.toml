@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 inotify = "0.10"
+inotify_sys = "0.1.3"

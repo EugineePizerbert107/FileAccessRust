@@ -24,7 +24,10 @@ fn main() {
         )
         .expect("Failed to add inotify watch");
 
-    println!("Watching current directory for activity...");
+    let cur_path = env::current_dir().expect("Failed to determine current directory");
+    let path = cur_path.into_os_string().into_string();
+
+    println!("Watching current directory for activity...{:?}", path);
 
     let mut buffer = [0u8; 4096];
     loop {
